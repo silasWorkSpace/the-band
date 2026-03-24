@@ -1,0 +1,17 @@
+/* PC: >=1024px */
+@media (min-width: 1024px) {}
+
+/* Tablet >=740px and <1024px */
+@media (min-width: 740) and (max-width: 1023px) {}
+
+/* Mobile */
+@media (max-width: 740px) {
+    #nav > li {
+        display: block;
+    }
+    #heading .search-btn,
+    #Slider .slider-text-container {
+        display: none;
+    }
+    
+}
