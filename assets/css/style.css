@@ -58,9 +58,6 @@ html {
 .col-third {
     width: calc(100%/3);
 }
-.border {
-    border: 1px solid #ccc;
-} 
 .wide {
     margin: 10px 0px;
     font-size: 30px;
@@ -94,7 +91,6 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
-    overflow: hidden;
 }
 #nav > li > a {
     color: #fff;
@@ -112,13 +108,16 @@ html {
 #heading .nav-btn {
     line-height: 1.5;
 }
-#heading .search-btn {
+#heading .search-btn,
+#heading .mobile-menu {
     float: right;
     padding: 12px 24px;
 }
 #heading .mobile-menu {
-    float: right;
-    padding: 12px 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
 #heading .search-btn:hover {
     background-color: #f44336;
@@ -304,6 +303,7 @@ html {
     background-color: rgba(0,0,0,0.4);
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 #modal .modal-container {
     background-color: #fff;
@@ -340,6 +340,8 @@ html {
     padding: 8px;
     width: 100%;
     font-size: 15px;
+    border: 1px solid #ccc;
+    line-height: 1.5;
 }
 #modal .buy-tickets {
     background-color: #009688;
@@ -359,6 +361,9 @@ html {
     float: right;
     margin: 15px 0px;
     line-height: 1.5;
+}
+#modal .modal-help a {
+    color: #2196F3;
 }
 #modal .close {
     background-color: #f44336;

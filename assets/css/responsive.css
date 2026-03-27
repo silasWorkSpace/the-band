@@ -1,17 +1,64 @@
 /* PC: >=1024px */
 @media (min-width: 1024px) {}
 
+/* Tablet & Mobile */
+@media (max-width: 1023px) {
+    #content .tour-column .buy-btn {
+        padding: 14px 16px;
+    }
+
+    #content .send-btn {
+        padding: 14px 16px;
+    }
+    #content .contact-form .form-control {
+        padding: 15px;
+    }
+    #footer .social {
+        font-size: 45px;
+    }
+}
+
 /* Tablet >=740px and <1024px */
-@media (min-width: 740) and (max-width: 1023px) {}
+@media (min-width: 740px) and (max-width: 1023px) {}
 
 /* Mobile */
 @media (max-width: 740px) {
+    #nav {
+        display: block;
+        height: auto;
+    }
     #nav > li {
         display: block;
+    }
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+    #nav .subnav a {
+        color: #fff;
+        padding: 10px 40px;
+    }
+    #nav > li:first-child {
+        display: inline-block;
     }
     #heading .search-btn,
     #Slider .slider-text-container {
         display: none;
     }
-    
+
+    #heading .mobile-menu {
+        display: block;
+    }
+    #modal .modal-container {
+        margin: 0px 10px;
+    }
+    .s-col-full {
+        width: 100% !important;
+    }
+    #contact #email-form {
+        margin-top: 8px;
+    }
+    #heading {
+        overflow: hidden;
+    }
 }

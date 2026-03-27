@@ -20,7 +20,7 @@
                 <ul id="nav">
                     <!-- home -->
                     <li>
-                        <a class="nav-btn" href="#home">Home</a>
+                        <a class="nav-btn" href="#">Home</a>
                     </li>
                     <!-- band -->
                     <li>
@@ -73,7 +73,7 @@
             <!-- Begin - Slider -->
         <div id="content">     
             <div id="Slider">
-                <div id="home" class="slideShow-container">
+                <div class="slideShow-container">
                     <img class="col-full slider-img" src="/FE_internship_goal/CSS_HTML/src/Day_6_7_8/TheBand/assets/img/img1.jpg" alt="">
                     <div class="center slider-text-container">
                         <h3 class="slider-head">Los Angeles</h3>
@@ -110,17 +110,17 @@
                 </div>
                 <!-- about row -->
                  <div class="row about-row">
-                    <div class="center col-third 
+                    <div class="center s-col-full col-third 
                    col about-column">
                         <p class="name">Name</p>
                         <img src="assets/img/bandmember.jpg" alt="" class="mbottom16 avt">
                     </div>
-                    <div class="center col-third 
+                    <div class="center s-col-full col-third 
                    col about-column">
                         <p class="name">Name</p>
                         <img src="assets/img/bandmember.jpg" alt="" class="mbottom16 avt">
                     </div>
-                    <div class="center col-third 
+                    <div class="center s-col-full col-third 
                    col about-column">
                         <p class="name">Name</p>
                         <img src="assets/img/bandmember.jpg" alt="" class="mbottom16 avt">
@@ -154,39 +154,39 @@
             <!-- tour row -->
             <div class="row tour-row">
                 <div class="tour-column">
-                    <div class="col col-third mbottom16 t-row">
+                    <div class="col col-third mbottom16 s-col-full t-row">
                         <img src="/FE_internship_goal/CSS_HTML/src/Day_6_7_8/TheBand/assets/img/newyork.jpg" alt="" class="col-full t-background">
                         <div class="tour-content">
                         <p class="header">
                             <b class="head">New York</b>
                         </p>
-                        <p class="t-time">Fri 27 Nov 2016</p>
+                        <p class="opacity t-time">Fri 27 Nov 2016</p>
                         <p class="t-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
                         <button class="buy-btn white-text js-buy-tickets">Buy Tickets</button>
                         </div>
                     </div>
                 </div>
                 <div class="tour-column">
-                    <div class="col col-third mbottom16 t-row">
+                    <div class="col col-third mbottom16 s-col-full t-row">
                         <img src="/FE_internship_goal/CSS_HTML/src/Day_6_7_8/TheBand/assets/img/paris.jpg" alt="" class="col-full t-background">
                         <div class="tour-content">
                         <p class="header">
                             <b class="head">New York</b>
                         </p>
-                        <p class="t-time">Fri 27 Nov 2016</p>
+                        <p class="opacity t-time">Fri 27 Nov 2016</p>
                         <p class="t-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
                         <button class="buy-btn white-text js-buy-tickets">Buy Tickets</button>
                         </div>
                     </div>
                 </div>
                 <div class="tour-column">
-                    <div class="col col-third mbottom16 t-row">
+                    <div class="col col-third mbottom16 s-col-full t-row">
                         <img src="/FE_internship_goal/CSS_HTML/src/Day_6_7_8/TheBand/assets/img/sanfran.jpg" alt="" class="col-full t-background">
                         <div class="tour-content">
                         <p class="header">
                             <b class="head">New York</b>
                         </p>
-                        <p class="t-time">Fri 27 Nov 2016</p>
+                        <p class="opacity t-time">Fri 27 Nov 2016</p>
                         <p class="t-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
                         <button class="buy-btn white-text js-buy-tickets">Buy Tickets</button>
                         </div>
@@ -205,20 +205,20 @@
                     <i class="opacity c-opacity">Fan? Drop a note!</i>
                 </div>
                 <!-- contact row -->
-                <div class="row form-content">
-                    <div class="col-half contact-info">
+                <div class="row form-content ">
+                    <div class="col-half col s-col-full contact-info">
                         <p><i class="ti-location-pin"></i>Chicago, US</p>
                         <p><i class="ti-mobile"></i>Phone: +00 151515</p>
                         <p><i class="ti-email"></i>Email: mail@mail.com</p>
                     </div>
-                    <div class="col col-half contact-form">
+                    <div class="s-col-full col col-half contact-form">
                         <form action="">
                             <div class="row">
-                                <div class="col col-half">
+                                <div class="col col-half s-col-full">
                                     <input type="text" name="" id="" required="Name" class="form-control" placeholder="Name">
                                 </div>
-                                <div class="col col-half">
-                                    <input type="email" name="" id=""
+                                <div class="col col-half s-col-full">
+                                    <input type="email" name="" id="email-form"
                                     required="Email" class="form-control" placeholder="Email">
                                 </div>
                             </div>
@@ -332,6 +332,23 @@
             modalContainer.addEventListener('click', function (event){
                 event.stopPropagation()
             })
+
+            const menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+            for(var i=0; i < menuItems.length; i++) {
+                const menuItem = menuItems[i];
+
+                menuItem.addEventListener('click', function(event) {
+                    var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
+                    if(isParentMenu) {
+                        event.preventDefault();
+                    }
+                    else {
+                    heading.style.height = null;
+                    }
+                })
+            }
+
+
         </script>
     </body>
 
